@@ -34,7 +34,7 @@ jobs:
         sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ./chrome-remote-desktop_current_amd64.deb
         sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
         sudo systemctl disable lightdm.service || true
-        sudo adduser Ubuntu chrome-remote-desktop
+        getent group chrome-remote-desktop && sudo adduser Ubuntu chrome-remote-desktop || true
 
     - name: Installing Google Chrome and extras
       run: |
