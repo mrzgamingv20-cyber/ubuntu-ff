@@ -63,5 +63,5 @@ jobs:
         expect eof
         '
 
-    - name: SSH tunnel over ngrok
-      uses: joshlarsen/ssh-tunnel-action@v1.2
+    - name: Keep alive
+      run: sleep 21000
